@@ -1,0 +1,215 @@
+[gd_scene load_steps=10 format=3 uid="uid://b6cowg32dy2o6"]
+
+[ext_resource type="Script" path="res://SCRIPTS/group_fish.gd" id="1_flcg6"]
+[ext_resource type="Script" path="res://SCRIPTS/fish_1.gd" id="2_wdebi"]
+[ext_resource type="Texture2D" uid="uid://3q0scuki12l7" path="res://ASSETS/enemies/small_fish.png" id="3_7exlc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbwif"]
+atlas = ExtResource("3_7exlc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ife6"]
+atlas = ExtResource("3_7exlc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82nej"]
+atlas = ExtResource("3_7exlc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xna25"]
+atlas = ExtResource("3_7exlc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_midvw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbwif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ife6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82nej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xna25")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m73ja"]
+radius = 11.0
+
+[node name="group_fish" type="Area2D"]
+script = ExtResource("1_flcg6")
+velocity = 200
+
+[node name="fish_1" type="Area2D" parent="." groups=["consumable"]]
+script = ExtResource("2_wdebi")
+growth_value = 5.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fish_1"]
+sprite_frames = SubResource("SpriteFrames_midvw")
+animation = &"swim"
+autoplay = "swim"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fish_1"]
+shape = SubResource("CircleShape2D_m73ja")
+
+[node name="swim_partilces" type="CPUParticles2D" parent="fish_1"]
+z_index = -1
+position = Vector2(9, 0)
+amount = 5
+lifetime = 0.1
+fixed_fps = 30
+emission_shape = 1
+emission_sphere_radius = 5.0
+direction = Vector2(400, 200)
+gravity = Vector2(200, 0)
+angular_velocity_min = -160.0
+angular_velocity_max = 407.27
+scale_amount_min = 0.5
+
+[node name="fish_2" type="Area2D" parent="." groups=["consumable"]]
+position = Vector2(-18, -15)
+script = ExtResource("2_wdebi")
+growth_value = 5.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fish_2"]
+sprite_frames = SubResource("SpriteFrames_midvw")
+animation = &"swim"
+autoplay = "swim"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fish_2"]
+shape = SubResource("CircleShape2D_m73ja")
+
+[node name="swim_partilces" type="CPUParticles2D" parent="fish_2"]
+z_index = -1
+position = Vector2(9, 0)
+amount = 5
+lifetime = 0.1
+fixed_fps = 30
+emission_shape = 1
+emission_sphere_radius = 5.0
+direction = Vector2(400, 200)
+gravity = Vector2(200, 0)
+angular_velocity_min = -160.0
+angular_velocity_max = 407.27
+scale_amount_min = 0.5
+
+[node name="fish_3" type="Area2D" parent="." groups=["consumable"]]
+position = Vector2(-18, 16)
+script = ExtResource("2_wdebi")
+growth_value = 5.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fish_3"]
+sprite_frames = SubResource("SpriteFrames_midvw")
+animation = &"swim"
+autoplay = "swim"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fish_3"]
+shape = SubResource("CircleShape2D_m73ja")
+
+[node name="swim_partilces" type="CPUParticles2D" parent="fish_3"]
+z_index = -1
+position = Vector2(9, 0)
+amount = 5
+lifetime = 0.1
+fixed_fps = 30
+emission_shape = 1
+emission_sphere_radius = 5.0
+direction = Vector2(400, 200)
+gravity = Vector2(200, 0)
+angular_velocity_min = -160.0
+angular_velocity_max = 407.27
+scale_amount_min = 0.5
+
+[node name="fish_4" type="Area2D" parent="." groups=["consumable"]]
+position = Vector2(19, 20)
+script = ExtResource("2_wdebi")
+growth_value = 5.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fish_4"]
+sprite_frames = SubResource("SpriteFrames_midvw")
+animation = &"swim"
+autoplay = "swim"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fish_4"]
+shape = SubResource("CircleShape2D_m73ja")
+
+[node name="swim_partilces" type="CPUParticles2D" parent="fish_4"]
+z_index = -1
+position = Vector2(9, 0)
+amount = 5
+lifetime = 0.1
+fixed_fps = 30
+emission_shape = 1
+emission_sphere_radius = 5.0
+direction = Vector2(400, 200)
+gravity = Vector2(200, 0)
+angular_velocity_min = -160.0
+angular_velocity_max = 407.27
+scale_amount_min = 0.5
+
+[node name="fish_5" type="Area2D" parent="." groups=["consumable"]]
+position = Vector2(20, -14)
+script = ExtResource("2_wdebi")
+growth_value = 5.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fish_5"]
+sprite_frames = SubResource("SpriteFrames_midvw")
+animation = &"swim"
+autoplay = "swim"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fish_5"]
+shape = SubResource("CircleShape2D_m73ja")
+
+[node name="swim_partilces" type="CPUParticles2D" parent="fish_5"]
+z_index = -1
+position = Vector2(9, 0)
+amount = 5
+lifetime = 0.1
+fixed_fps = 30
+emission_shape = 1
+emission_sphere_radius = 5.0
+direction = Vector2(400, 200)
+gravity = Vector2(200, 0)
+angular_velocity_min = -160.0
+angular_velocity_max = 407.27
+scale_amount_min = 0.5
+
+[node name="fish_6" type="Area2D" parent="." groups=["consumable"]]
+position = Vector2(1, 32)
+script = ExtResource("2_wdebi")
+growth_value = 5.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fish_6"]
+sprite_frames = SubResource("SpriteFrames_midvw")
+animation = &"swim"
+autoplay = "swim"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fish_6"]
+shape = SubResource("CircleShape2D_m73ja")
+
+[node name="swim_partilces" type="CPUParticles2D" parent="fish_6"]
+z_index = -1
+position = Vector2(9, 0)
+amount = 5
+lifetime = 0.1
+fixed_fps = 30
+emission_shape = 1
+emission_sphere_radius = 5.0
+direction = Vector2(400, 200)
+gravity = Vector2(200, 0)
+angular_velocity_min = -160.0
+angular_velocity_max = 407.27
+scale_amount_min = 0.5

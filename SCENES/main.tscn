@@ -1,0 +1,212 @@
+[gd_scene load_steps=16 format=3 uid="uid://dt6eqftqnxtjp"]
+
+[ext_resource type="PackedScene" uid="uid://c4hmhto5x1ubc" path="res://SCENES/player.tscn" id="1_4xo1u"]
+[ext_resource type="Script" path="res://SCRIPTS/main.gd" id="1_mlssm"]
+[ext_resource type="Script" path="res://SCRIPTS/sea_background.gd" id="3_6smah"]
+[ext_resource type="Texture2D" uid="uid://dvnkxltpswgkh" path="res://ASSETS/background/sea_parallax1.png" id="4_ui664"]
+[ext_resource type="PackedScene" uid="uid://ckmvlp5hsv51x" path="res://SCENES/enviroment/plant_1.tscn" id="5_qs44w"]
+[ext_resource type="PackedScene" uid="uid://bgcipfitgkxa" path="res://SCENES/enviroment/plant_3.tscn" id="5_w33s4"]
+[ext_resource type="Texture2D" uid="uid://k6hh8jpb5c8b" path="res://ASSETS/background/fish_background_1.png" id="5_y6jxt"]
+[ext_resource type="PackedScene" uid="uid://cxvvfj8tufksb" path="res://SCENES/enviroment/plant_2.tscn" id="6_snkr2"]
+[ext_resource type="Texture2D" uid="uid://dlbxjcvt0m613" path="res://ASSETS/background/fish_background_3.png" id="6_ugsa2"]
+[ext_resource type="Texture2D" uid="uid://c1i2dkk02goea" path="res://ASSETS/background/fish_backgorund_2.png" id="7_bisdo"]
+[ext_resource type="Texture2D" uid="uid://3xnr8y8swa56" path="res://ASSETS/background/parallax_2.png" id="7_hhclk"]
+[ext_resource type="Texture2D" uid="uid://dtgbye4fpcyyw" path="res://ASSETS/background/parallax_3.png" id="8_3onyj"]
+[ext_resource type="Texture2D" uid="uid://ng5pyfext1ff" path="res://ASSETS/background/parallax_4.png" id="9_2nncr"]
+[ext_resource type="Texture2D" uid="uid://637sf1y5g4ru" path="res://ASSETS/background/parallax_down.png" id="13_yd7ie"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62s4x"]
+size = Vector2(133, 4)
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_mlssm")
+
+[node name="timer_enemeis" type="Timer" parent="."]
+autostart = true
+
+[node name="sea_background" type="ParallaxBackground" parent="."]
+script = ExtResource("3_6smah")
+
+[node name="ocean" type="ParallaxLayer" parent="sea_background"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(384, 216)
+
+[node name="Sprite2D" type="Sprite2D" parent="sea_background/ocean"]
+texture = ExtResource("4_ui664")
+centered = false
+
+[node name="fish_background_3" type="ParallaxLayer" parent="sea_background"]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(384, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="sea_background/fish_background_3"]
+modulate = Color(0.847474, 0.847474, 0.847474, 1)
+texture = ExtResource("6_ugsa2")
+centered = false
+
+[node name="fish_background_4" type="ParallaxLayer" parent="sea_background"]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(384, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="sea_background/fish_background_4"]
+modulate = Color(0.847474, 0.847474, 0.847474, 1)
+position = Vector2(0, -29)
+texture = ExtResource("7_bisdo")
+centered = false
+
+[node name="mountains_2" type="ParallaxLayer" parent="sea_background"]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(384, 0)
+
+[node name="plant_5" parent="sea_background/mountains_2" instance=ExtResource("5_w33s4")]
+position = Vector2(39, 67)
+
+[node name="plant_6" parent="sea_background/mountains_2" instance=ExtResource("5_w33s4")]
+position = Vector2(196, 66)
+flip_h = true
+
+[node name="plant_3" parent="sea_background/mountains_2" instance=ExtResource("6_snkr2")]
+position = Vector2(345, 73)
+flip_h = true
+
+[node name="plant_4" parent="sea_background/mountains_2" instance=ExtResource("6_snkr2")]
+position = Vector2(165, 69)
+
+[node name="plant_2" parent="sea_background/mountains_2" instance=ExtResource("5_qs44w")]
+position = Vector2(258, 74)
+
+[node name="Sprite2D" type="Sprite2D" parent="sea_background/mountains_2"]
+texture = ExtResource("7_hhclk")
+centered = false
+
+[node name="mountains_3" type="ParallaxLayer" parent="sea_background"]
+modulate = Color(0.646029, 0.646029, 0.646029, 1)
+position = Vector2(-1, 22)
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(384, 0)
+
+[node name="plant_3" parent="sea_background/mountains_3" instance=ExtResource("5_w33s4")]
+position = Vector2(21, 62)
+
+[node name="plant_1" parent="sea_background/mountains_3" instance=ExtResource("5_qs44w")]
+position = Vector2(229, 70)
+
+[node name="plant_2" parent="sea_background/mountains_3" instance=ExtResource("6_snkr2")]
+position = Vector2(107, 72)
+
+[node name="Sprite2D" type="Sprite2D" parent="sea_background/mountains_3"]
+texture = ExtResource("7_hhclk")
+centered = false
+flip_h = true
+
+[node name="mountains_1" type="ParallaxLayer" parent="sea_background"]
+modulate = Color(0.489622, 0.489622, 0.489622, 1)
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(384, 0)
+
+[node name="plant_7" parent="sea_background/mountains_1" instance=ExtResource("5_w33s4")]
+position = Vector2(329, 125)
+
+[node name="plant_6" parent="sea_background/mountains_1" instance=ExtResource("5_w33s4")]
+position = Vector2(117, 140)
+flip_h = true
+
+[node name="plant_5" parent="sea_background/mountains_1" instance=ExtResource("5_qs44w")]
+position = Vector2(163, 125)
+flip_h = true
+
+[node name="plant_4" parent="sea_background/mountains_1" instance=ExtResource("6_snkr2")]
+position = Vector2(210, 138)
+
+[node name="plant_3" parent="sea_background/mountains_1" instance=ExtResource("6_snkr2")]
+position = Vector2(249, 133)
+flip_h = true
+
+[node name="plant_1" parent="sea_background/mountains_1" instance=ExtResource("5_qs44w")]
+position = Vector2(77, 124)
+
+[node name="plant_2" parent="sea_background/mountains_1" instance=ExtResource("6_snkr2")]
+position = Vector2(19, 132)
+
+[node name="Sprite2D" type="Sprite2D" parent="sea_background/mountains_1"]
+texture = ExtResource("8_3onyj")
+centered = false
+
+[node name="parallax_down" type="ParallaxLayer" parent="sea_background"]
+position = Vector2(-7, 82)
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(384, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="sea_background/parallax_down"]
+modulate = Color(0.490196, 0.490196, 0.490196, 1)
+position = Vector2(6, 126)
+texture = ExtResource("13_yd7ie")
+centered = false
+flip_v = true
+
+[node name="blue_filter" type="ParallaxLayer" parent="sea_background"]
+position = Vector2(0, -2)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(384, 216)
+
+[node name="Sprite2D" type="Sprite2D" parent="sea_background/blue_filter"]
+texture = ExtResource("9_2nncr")
+centered = false
+
+[node name="fish_background_1" type="ParallaxLayer" parent="sea_background"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(384, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="sea_background/fish_background_1"]
+texture = ExtResource("7_bisdo")
+centered = false
+
+[node name="fish_background_2" type="ParallaxLayer" parent="sea_background"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(384, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="sea_background/fish_background_2"]
+texture = ExtResource("5_y6jxt")
+centered = false
+
+[node name="timerparallaxvelocity" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="colliders" type="Node2D" parent="."]
+
+[node name="colliders_up" type="StaticBody2D" parent="colliders"]
+position = Vector2(0, -99)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="colliders/colliders_up"]
+position = Vector2(66.5, -3)
+shape = SubResource("RectangleShape2D_62s4x")
+
+[node name="colliders_down" type="StaticBody2D" parent="colliders"]
+position = Vector2(0, 316)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="colliders/colliders_down"]
+position = Vector2(66.5, -3)
+shape = SubResource("RectangleShape2D_62s4x")
+
+[node name="score" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="score"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0"
+
+[node name="player" parent="." instance=ExtResource("1_4xo1u")]
+position = Vector2(70, 97)
+
+[node name="cam" type="Camera2D" parent="player"]
+position = Vector2(66, 1)
+zoom = Vector2(1.2, 1.2)
+limit_top = -100
+limit_bottom = 311
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 1.0
+editor_draw_limits = true

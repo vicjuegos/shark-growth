@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjdy3nph4jqfi"]
+
+[ext_resource type="Script" path="res://SCRIPTS/enemies/big_fish.gd" id="1_2323j"]
+[ext_resource type="Texture2D" uid="uid://d37b7i11tp1g7" path="res://ASSETS/enemies/big_fish.png" id="2_eyqxv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_270g1"]
+atlas = ExtResource("2_eyqxv")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jijhg"]
+atlas = ExtResource("2_eyqxv")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0cr6m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_270g1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jijhg")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4p7y"]
+size = Vector2(63, 32)
+
+[node name="big_fish" type="Area2D" groups=["consumable"]]
+script = ExtResource("1_2323j")
+growth_value = 150.0
+velocity = 50
+valuerequiredtobeeaten = 400
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_0cr6m")
+animation = &"swim"
+autoplay = "swim"
+frame_progress = 0.940429
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_c4p7y")
+
+[node name="swim_partilces" type="CPUParticles2D" parent="."]
+z_index = -1
+position = Vector2(23, 0)
+fixed_fps = 30
+emission_shape = 1
+emission_sphere_radius = 20.51
+direction = Vector2(400, 200)
+gravity = Vector2(200, 0)
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0

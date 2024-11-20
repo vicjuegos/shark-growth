@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://bpr5oy1wj1sju"]
+
+[ext_resource type="Script" path="res://SCRIPTS/enemies/fast_fish.gd" id="1_ah51n"]
+[ext_resource type="Texture2D" uid="uid://cwwbhbnbnacfr" path="res://ASSETS/enemies/fish_fast.png" id="2_8gu6u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c31xw"]
+atlas = ExtResource("2_8gu6u")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i7yu"]
+atlas = ExtResource("2_8gu6u")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yk84i"]
+atlas = ExtResource("2_8gu6u")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0obfa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c31xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3i7yu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk84i")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18eps"]
+size = Vector2(26.5, 8)
+
+[node name="fast_fish" type="Area2D" groups=["consumable"]]
+script = ExtResource("1_ah51n")
+growth_value = 20.0
+velocity_x = 400
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0obfa")
+animation = &"swim"
+autoplay = "swim"
+frame_progress = 0.749191
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.25, 1)
+shape = SubResource("RectangleShape2D_18eps")
+
+[node name="swim_partilces" type="CPUParticles2D" parent="."]
+z_index = -1
+position = Vector2(16, 1)
+lifetime = 0.2
+fixed_fps = 30
+emission_shape = 1
+emission_sphere_radius = 5.0
+direction = Vector2(400, 200)
+gravity = Vector2(200, 0)
+angular_velocity_min = -160.0
+angular_velocity_max = 407.27
+scale_amount_max = 2.0

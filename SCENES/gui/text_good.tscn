@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5ux68iflxpnv"]
+
+[ext_resource type="Texture2D" uid="uid://cp3ce0e57x4fm" path="res://ASSETS/gui/text_good.png" id="1_hbotq"]
+[ext_resource type="Script" path="res://SCRIPTS/text_good.gd" id="2_yv1xs"]
+
+[node name="text_good" type="Node2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_hbotq")
+script = ExtResource("2_yv1xs")
+
+[node name="final_position" type="Marker2D" parent="."]
+position = Vector2(0, -17)

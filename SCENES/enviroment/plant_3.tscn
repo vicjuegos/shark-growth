@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://bgcipfitgkxa"]
+
+[ext_resource type="Texture2D" uid="uid://deik6x0tc24hi" path="res://ASSETS/background/plant_3.png" id="1_od7le"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctrku"]
+atlas = ExtResource("1_od7le")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vt7u1"]
+atlas = ExtResource("1_od7le")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d33u7"]
+atlas = ExtResource("1_od7le")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul4ou"]
+atlas = ExtResource("1_od7le")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gj1wg"]
+atlas = ExtResource("1_od7le")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi1yv"]
+atlas = ExtResource("1_od7le")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2aesx"]
+atlas = ExtResource("1_od7le")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rupg4"]
+atlas = ExtResource("1_od7le")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xgboy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctrku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vt7u1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d33u7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ul4ou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gj1wg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi1yv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2aesx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rupg4")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[node name="plant_3" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_xgboy")
+animation = &"move"
+autoplay = "move"
+frame_progress = 0.503208
