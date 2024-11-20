@@ -197,7 +197,7 @@ offset_bottom = 23.0
 text = "0"
 
 [node name="player" parent="." instance=ExtResource("1_4xo1u")]
-position = Vector2(70, 97)
+position = Vector2(-29, 55)
 
 [node name="cam" type="Camera2D" parent="player"]
 position = Vector2(66, 1)
